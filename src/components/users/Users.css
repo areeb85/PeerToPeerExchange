@@ -1,0 +1,41 @@
+.user-card {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.users-container {
+    margin-top : 80px;
+}
+
+.user-card h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.user-card p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+.user-card .actions {
+    margin-top: 10px;
+}
+
+.user-card button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-card button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,30 @@
+.container {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    margin: auto;
+    max-width: 1200px;
+    /* margin-bottom : 20px; */
+    /* background-color: #333333 ; */
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .book-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .book-title {
+    flex-grow: 1;
+    font-size: 1.2em;  /* Increase the font size */
+    font-weight: bold; /* Make the font bold */
+    margin-left: 20px; /* Shift text to the right */
+  }

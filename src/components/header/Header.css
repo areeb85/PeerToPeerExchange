@@ -1,0 +1,30 @@
+.navbar {
+    position: fixed; /* Un-comment this line to fix the position at the top */
+    top: 0;
+    left: 0; /* Ensure it's aligned to the left */
+    z-index: 1000; /* Keep it above other content */
+    height: 80px;
+    font-size: 1.2rem;
+    width: 100%; /* Ensure it spans the full width */
+    display: flex;
+    align-items: center; /* Center items vertically within the navbar */
+    justify-content: center; /* Center navbar content horizontally */
+    /* margin: 0 auto;  */
+    /* margin : 20px; */
+    padding-left: 20px;
+    padding-right : 20px;
+    /* Center the menubar horizontally - may not be needed with width 100% */
+    max-width: 100%; /* Prevent it from exceeding the viewport width */
+    overflow: visible; /* Prevent content from overflowing */
+    
+}
+.navbar .dropdown {
+    z-index: 1001; /* Ensure it's above the navbar */
+}
+.navbar .p-menubar {
+    width: 100%;
+}
+
+.navbar .p-menu-list {
+    z-index: 1000;
+}

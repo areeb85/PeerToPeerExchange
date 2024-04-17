@@ -1,0 +1,35 @@
+/* Ensures the body takes the full height of the viewport and applies the Supabase-like dark background */
+
+
+/* Styles for the login container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    height: 100%;
+    padding: 2em;
+    min-width: 500px;
+}
+
+.login-container .p-inputtext {
+    width: 100%;
+    margin-bottom: 15px; /* Space between input fields */
+    border-radius: 4px; /* Optional: Rounds the corners of the input fields */
+    min-width: 200px;
+}
+
+.login-container .p-button {
+    background-color: #3ECF8E; /* Supabase green for the button */
+    border-color: #3ECF8E; /* Border color to match */
+    color: #ffffff; /* White text on the button */
+    width: 100%;
+    margin-top : 15px;
+}
+
+.login-container .p-button:enabled:hover {
+    background-color: #35b779; /* Darker green on hover */
+    border-color: #35b779;
+}
+

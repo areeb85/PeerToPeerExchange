@@ -1,0 +1,46 @@
+.signup-container {
+    min-width: 400px;
+    margin: auto;
+    padding: 2em;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    align-content : center;
+    flex-direction: column;
+    height: 100%;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.signup-title {
+    color: #3ECF8E;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.p-field {
+    margin-bottom: 20px;
+}
+
+.p-inputtext, .p-password {
+    width: 100%;
+}
+
+.p-button {
+    width: 100%;
+    background-color: #3ECF8E;
+    border-color: #3ECF8E;
+}
+
+.p-button:enabled:hover {
+    background-color: #35b779;
+    border-color: #35b779;
+}
+
+.p-float-label label {
+    color: #ccc;
+}
+
+.p-float-label .p-inputtext:focus + label,
+.p-float-label .p-password .p-inputtext:focus + label {
+    color: #3ECF8E;
+}

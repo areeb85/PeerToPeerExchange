@@ -1,0 +1,66 @@
+.user-profile {
+    width : 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgb(85, 77, 77);
+    border-radius: 8px;
+    background-color: black;
+    margin-top : 100px;
+    margin-right : 32px;
+    padding-left : 20px;
+}
+
+.user-detail {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.user-container {
+    padding-top: 60px;  /* Adjust according to the height of your navbar */
+    margin: auto;
+    max-width: 100%;
+}
+
+.user-detail label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.user-detail .p-inputtext,
+.user-detail .p-inputtextarea {
+    flex: 1;
+}
+
+.user-detail .p-inputtextarea {
+    margin-top: 5px;
+}
+
+.button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.my-text-style {
+    margin-top : 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px; /* Sets the font size */
+    color: #333333; /* Sets the text color */
+    font-weight: bold; /* Makes the text bold */
+  }
+
+.collection-and-add-book-container {
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Vertically aligns children in the middle */
+    justify-content: space-between; /* Positions children with space between them */
+    width: 100%; /* Makes the container full width */
+}
+
+@media only screen and (max-width : 600px) {
+    .collection-and-add-book-container {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
