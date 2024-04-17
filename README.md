@@ -27,6 +27,22 @@ The Peer-to-Peer (P2P) Book Exchange Platform is a community-driven web applicat
 4. **Book Exchange**: When a user decides to pass on a book, the system checks for the next eligible user in the priority queue and facilitates the exchange by notifying the current owner of the book. Once the owner is done reading the book, they can approve the request and transfer the ownership to the next eligible user.
 5. **Notification System**: Ensures users are informed when it is their turn to receive a book or when someone requests one of their books.
 
+## Prioritization Algorithm
+The platform uses a combined score of user points (earned by posting books) and active time spent on the platform to prioritize book requests. Here’s how it works:
+
+### Points System
+- **Earning Points**: Users earn points each time they post a book to the platform. Each book posted contributes one point to the user's score.
+
+### Active Time Tracking
+- **Activity Monitoring**: The system tracks user interaction with various elements such as buttons, the navigation bar, and other triggerable functions.
+- **Recording Active Time**: Active time is stored in the `users_table` and is updated in real-time as users interact with the platform.
+
+### Request Prioritization
+- **Fetching Requests**: Requests are fetched along with user points and active time from the database.
+- **Normalization**: Both points and active time are normalized to ensure they contribute fairly to the priority score.
+- **Priority Calculation**: A combined score is calculated for each request, helping sort the requests queue effectively.
+
+
 ## Future Works
 
 While the current version of the Peer-to-Peer Book Exchange Platform offers a functional and interactive way for users to exchange books, there are several areas identified for future improvements:
