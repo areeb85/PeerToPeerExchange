@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Peer-to-Peer Book Exchange Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+The Peer-to-Peer (P2P) Book Exchange Platform is a community-driven web application designed to facilitate the exchange of physical books. Users can list books they no longer need, search for books available on the platform, and request exchanges, leveraging a priority-based queuing system. This project focuses on sustainability and encourages sharing within a reading community.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User Profiles**: Users can create and manage their profiles, which include their book listings and personal reading interests.
+- **Book Listings**: Users can list books they wish to exchange, providing details such as title, author, genre, and a summary.
+- **Advanced Search**: Implements a Fuse.js based search for book titles, enabling fuzzy search capabilities that help users find books even with partial or slightly incorrect queries.
+- **Priority Queue System**: The exchange mechanism is governed by a priority queue. Users gain points by listing books and spending time on the platform. These points influence their priority in the queue for book requests.
+- **Dynamic Notifications**: Users receive notifications when their books are requested or when they are next in line to receive a book, ensuring they are always updated on the status of their exchanges.
 
-### `npm start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js**: Used for building the front-end user interface.
+- **PostgreSQL**: The backend database that stores user and book information.
+- **Supabase**: An open-source Firebase alternative that provides backend services, such as real-time databases and authentication, used to manage user interactions and data storage.
+- **Fuse.js**: Integrated for fuzzy search functionality, enhancing the search experience by allowing flexibility in user queries.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How It Works
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **User Registration**: Users register on the platform and set up their profiles.
+2. **Book Listing**: Users list their books with necessary details.
+3. **Book Requests**: Users search and request books. Requests are placed in a priority queue based on the user's accumulated points and active time spent on the platform.
+4. **Book Exchange**: When a user decides to pass on a book, the system checks for the next eligible user in the priority queue and facilitates the exchange by notifying both parties.
+5. **Notification System**: Ensures users are informed when it is their turn to receive a book or when someone requests one of their books.
