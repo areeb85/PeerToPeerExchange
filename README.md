@@ -17,11 +17,38 @@ The Peer-to-Peer (P2P) Book Exchange Platform is a community-driven web applicat
 - **PostgreSQL**: The backend database that stores user and book information.
 - **Supabase**: An open-source Firebase alternative that provides backend services, such as real-time databases and authentication, used to manage user interactions and data storage.
 - **Fuse.js**: Integrated for fuzzy search functionality, enhancing the search experience by allowing flexibility in user queries.
+- **Firebase**: Used only for hosting the web app - https://peertopeerareeb.web.app
 
 ## How It Works
 
 1. **User Registration**: Users register on the platform and set up their profiles.
 2. **Book Listing**: Users list their books with necessary details.
 3. **Book Requests**: Users search and request books. Requests are placed in a priority queue based on the user's accumulated points and active time spent on the platform.
-4. **Book Exchange**: When a user decides to pass on a book, the system checks for the next eligible user in the priority queue and facilitates the exchange by notifying both parties.
+4. **Book Exchange**: When a user decides to pass on a book, the system checks for the next eligible user in the priority queue and facilitates the exchange by notifying the current owner of the book. Once the owner is done reading the book, they can approve the request and transfer the ownership to the next eligible user.
 5. **Notification System**: Ensures users are informed when it is their turn to receive a book or when someone requests one of their books.
+
+## Future Works
+
+While the current version of the Peer-to-Peer Book Exchange Platform offers a functional and interactive way for users to exchange books, there are several areas identified for future improvements:
+
+1. **Testing**: Currently, the platform lacks comprehensive automated tests. Future development will include the implementation of unit and integration tests to ensure code reliability and facilitate easier updates and refactoring.
+
+2. **Environment Variables for API Keys**: API keys and sensitive credentials are currently not stored securely. Moving forward, these will be managed via environment variables to enhance security and conform with best practices in software development.
+
+3. **AI-Driven Features**:
+   - **Book Recommendations**: Integrate machine learning to analyze user preferences and reading habits to offer personalized book recommendations.
+   - **Smart Search**: Implement AI-enhanced search algorithms to improve search results and efficiency, possibly extending to semantic search capabilities.
+   - **Automated Book Matching**: Develop an AI system that can automatically suggest potential book exchanges based on user interests and book availability.
+
+4. **User Experience Enhancements**:
+   - **Responsive Design**: Improve the responsiveness of the web application to ensure it is fully functional on devices of all sizes.
+   - **User Interface Improvements**: Continuously update the user interface to make it more intuitive and user-friendly based on user feedback.
+
+5. **Security Enhancements**:
+   - **OAuth Integration**: Implement OAuth for more secure and versatile user authentication.
+   - **Data Encryption**: Enhance data security by encrypting sensitive user data stored in the database.
+
+These improvements aim to make the Peer-to-Peer Book Exchange Platform more robust, secure, and user-friendly, enhancing the overall user experience and platform reliability.
+
+
+
