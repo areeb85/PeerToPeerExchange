@@ -59,6 +59,7 @@ While the current version of the Peer-to-Peer Book Exchange Platform offers a fu
 4. **User Experience Enhancements**:
    - **Responsive Design**: Improve the responsiveness of the web application to ensure it is fully functional on devices of all sizes.
    - **User Interface Improvements**: Continuously update the user interface to make it more intuitive and user-friendly based on user feedback.
+   - **Community engagement** : As of now, users cannot interact with one another rather they can only see who exists on the platform. 
 
 5. **Security Enhancements**:
    - **OAuth Integration**: Implement OAuth for more secure and versatile user authentication.
@@ -66,5 +67,9 @@ While the current version of the Peer-to-Peer Book Exchange Platform offers a fu
 
 These improvements aim to make the Peer-to-Peer Book Exchange Platform more robust, secure, and user-friendly, enhancing the overall user experience and platform reliability.
 
+
+Finally, here is an image of how the data base schema looks like:
+
+![Database Schema](/src/assets/schema.png)
 
 

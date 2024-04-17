@@ -24,7 +24,9 @@ function Header({onSearchChange}) {
 
     // Dynamically set the account items based on user authentication status
     const accountItems = userId ? [
-        { label: "My Profile", icon: 'pi pi-fw pi-user', command: async () => await updateAndNavigate('/userprofile') }
+        { label: "My Profile", icon: 'pi pi-fw pi-user', command: async () => await updateAndNavigate('/userprofile') },
+        { label: 'Login', icon: 'pi pi-fw pi-sign-in', command: async () => await updateAndNavigate('/login') },
+        { label: 'Sign Up', icon: 'pi pi-fw pi-user-plus', command: async () => await updateAndNavigate('/signup') }
     ] : [
         { label: 'Login', icon: 'pi pi-fw pi-sign-in', command: async () => await updateAndNavigate('/login') },
         { label: 'Sign Up', icon: 'pi pi-fw pi-user-plus', command: async () => await updateAndNavigate('/signup') }
