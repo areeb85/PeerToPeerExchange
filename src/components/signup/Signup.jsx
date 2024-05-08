@@ -36,9 +36,6 @@ const Signup = () => {
 
         if (userExists) {
             toast.current.show({ severity: 'error', summary: 'Error', detail: 'User already exists', life: 3000 });
-            // setTimeout(() => {
-            //     navigate('/userprofile');
-            // }, 1000); 
         }
 
 
@@ -58,13 +55,6 @@ const Signup = () => {
         
         if (error) console.error('Error signing up:', error.message);
 
-        // const {data : newSignUp, error: lookUpError} = await supabase
-        //     .from("users")
-        //     .select("*")
-        //     .eq("email", email)
-        //     .single
-
-        // window.localStorage.setItem("user_id", )    
         else {
             toast.current.show({severity : "success", summary : "Great Success!", detail : "User signed up!"})
             window.localStorage.setItem("email", email);
