@@ -13,7 +13,7 @@
 
 /src/Firebase-config.js
 
-/functions
+/functions/index.js
 
 # misc
 .DS_Store
