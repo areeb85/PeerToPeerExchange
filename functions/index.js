@@ -19,7 +19,7 @@ admin.initializeApp();
 
 // console.log("URL", process.env.SUPABASE_URL)
 
-const supabase = createClient("https://utjvyryisziuefsfdceq.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV0anZ5cnlpc3ppdWVmc2ZkY2VxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTI4MjAxMzAsImV4cCI6MjAyODM5NjEzMH0.bCQvw3B4VLVkNNOThMd2eLLAkcKDhgHF41ufcWtRfLw");
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
 // Create and deploy your first functions
 // https://firebase.google.com/docs/functions/get-started
@@ -309,6 +309,6 @@ exports.getUsers = onCall(async (request, context) => {
 
         console.log("There has been an error fetching the list of users")
         return null;
-        
+
     }
 })

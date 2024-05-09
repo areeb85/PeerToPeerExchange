@@ -21,6 +21,7 @@ function Home() {
         const fetchData = async () => {
             const response = await getBooks();
             console.log("Inside useEffect", response);
+            
             if (response) {
                 setBooks(response)
             }

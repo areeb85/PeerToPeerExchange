@@ -39,11 +39,17 @@ export const ActiveTimeProvider = ({ children }) => {
         };
     }, []);
 
+
+    const [books, setBooks] = useState(null);
     const getBooks = async () => {
+        if (books) {
+            return books
+        }
         try{
             const functionGet =  httpsCallable(fbfunctions, "getBooks")
             const result = await Promise.resolve(functionGet());
             console.log(result.data);
+            setBooks(result.data)
             return result.data;
         }
          catch (error) {
@@ -52,12 +58,17 @@ export const ActiveTimeProvider = ({ children }) => {
          }
     }
 
+    const [users, setUsers] = useState(null);
     const getUsers = async () => {
+        if (users) {
+            return users
+        }
         try
         {
             const functionGet = httpsCallable(fbfunctions, "getUsers");
             const result = await Promise.resolve(functionGet());
             console.log("These are all the users", result.data);
+            setUsers(result.data)
             return result.data
 
         }
