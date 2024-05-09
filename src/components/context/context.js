@@ -1,8 +1,11 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
+import { fbfunctions } from '../../Firebase-config';
+import { httpsCallable } from 'firebase/functions';
 
 const ActiveTimeContext = createContext(0);
 
 export const useActiveTime = () => useContext(ActiveTimeContext);
+export default ActiveTimeContext
 
 export const ActiveTimeProvider = ({ children }) => {
     const [activeTime, setActiveTime] = useState(0);
@@ -35,10 +38,48 @@ export const ActiveTimeProvider = ({ children }) => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
     }, []);
+
+    const getBooks = async () => {
+        try{
+            const functionGet =  httpsCallable(fbfunctions, "getBooks")
+            const result = await Promise.resolve(functionGet());
+            console.log(result.data);
+            return result.data;
+        }
+         catch (error) {
+            console.log("There has been an error");
+            
+         }
+    }
+
+    const getUsers = async () => {
+        try
+        {
+            const functionGet = httpsCallable(fbfunctions, "getUsers");
+            const result = await Promise.resolve(functionGet());
+            console.log("These are all the users", result.data);
+            return result.data
+
+        }
+        catch (error) 
+        {
+            console.log("There has been an error fetching the users");
+            return null;
+        }
+    }
+
+
+
     
 
     return (
-        <ActiveTimeContext.Provider value={{activeTime}}>
+        <ActiveTimeContext.Provider 
+            value={{
+                activeTime,
+                getBooks,
+                getUsers
+            }}
+        >
             {children}
         </ActiveTimeContext.Provider>
     );

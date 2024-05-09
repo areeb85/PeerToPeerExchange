@@ -71,7 +71,7 @@ const Signup = () => {
         <>
             <Header/>
             <div className="signup-container">
-                <Toast ref={toast}/>
+                <Toast ref={toast} position='top-center'/>
                 <img src={logo} alt="Logo" style={{width : "150px", marginBottom : "20px", borderRadius : "12px", height : "150px"}}/>
                 <div className="p-fluid" style={{width : "50%"}}>
                     <div className="p-field">

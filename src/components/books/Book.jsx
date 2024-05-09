@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import supabase from '../dbmanager/Supabase';
@@ -6,6 +6,7 @@ import './Book.css';
 import { useNavigate } from 'react-router-dom';
 import { createRequest, updateActiveTime  } from '../backend/functions';
 import { useActiveTime }  from '../context/context';
+import { Toast } from 'primereact/toast';
 
 
 function BookCard({ book, onDelete, showDelete, showRequest }) {
@@ -19,6 +20,8 @@ function BookCard({ book, onDelete, showDelete, showRequest }) {
   const [year, setYear] = useState('');
   const [summary, setSummary] = useState('');
   const navigate = useNavigate();
+
+  const toast = useRef(null);
 
   // console.log('Active Time from Context:', activeTime);
 
@@ -143,9 +146,11 @@ function BookCard({ book, onDelete, showDelete, showRequest }) {
       console.log("time", time);
       const totalTime = activeTime + time.active_time
       const newRequest = await createRequest({bookId, userId, totalTime});
+      toast.current.show({severity : "success", summary : "Your request has been queued!", detail : ""})
       if (newRequest) {
         console.log('Request successful:', newRequest);
         // Optionally update UI or give feedback to the user
+        
       }
     } catch (error) {
       console.error('Error requesting book:', error);
@@ -155,6 +160,7 @@ function BookCard({ book, onDelete, showDelete, showRequest }) {
 
   const header = (
     <div className="book-card-header">
+      
       <span className="book-title">{book.title}</span>
       {showDelete && (
         <Button 
@@ -185,15 +191,19 @@ function BookCard({ book, onDelete, showDelete, showRequest }) {
   );
 
   return (
-    <Card 
-      // title={title} 
-      subTitle={`${author} - ${genre} (${year})`} 
-      style={{marginTop : "10px", height : "350px", minWidth : "300px"}} 
-      header = {header} 
-      footer={footer}
-    >
-        <p className="m-0" style={{ whiteSpace: 'pre-line' }}>{summary}</p>
-    </Card>
+    <>
+      <Toast ref={toast} position='top-center'/>
+      <Card 
+        // title={title} 
+        subTitle={`${author} - ${genre} (${year})`} 
+        style={{marginTop : "10px", height : "350px", minWidth : "300px"}} 
+        header = {header} 
+        footer={footer}
+      >
+          <p className="m-0" style={{ whiteSpace: 'pre-line' }}>{summary}</p>
+      </Card>
+    </>
+    
   );
 }
 

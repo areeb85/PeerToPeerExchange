@@ -1,27 +1,22 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import supabase from '../dbmanager/Supabase';
 import Header from '../header/Header';
 import UserCard from './UserCard';
 import Fuse from 'fuse.js';
+import ActiveTimeContext from '../context/context';
 
 function Users() {
   const [users, setUsers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const {getUsers} = useContext(ActiveTimeContext);
 
   useEffect(() => {
     fetchUsers();
   }, []);
 
   const fetchUsers = async () => {
-    let { data: usersData, error } = await supabase
-        .from('users')
-        .select('*');
-    if (error) {
-        console.error('Error fetching users:', error);
-    } else {
-        setUsers(usersData);
-        console.log("These are the users", users)
-    }
+    const response = await getUsers();
+    setUsers(response);
   }
   const options = {
     includeScore: true,
@@ -42,7 +37,7 @@ function Users() {
       <div className="users-container">
               {results.length > 0 ? (
                 results.map((user) => (
-                    <UserCard key={user.user_id} user={user} />
+                    <UserCard key={user.user_id} user={user} disableEmail={true} />
                 ))
               ) 
               : 
