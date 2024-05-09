@@ -13,6 +13,8 @@
 
 /src/Firebase-config.js
 
+/functions
+
 # misc
 .DS_Store
 .env.local
